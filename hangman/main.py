@@ -4,7 +4,7 @@ from hangman_art import *
 
 if __name__ == '__main__':
     result =  random.choice(word_list)
-    # print(result)
+    print(result)
     s = '_'*len(result)
     life = 6
     print(logo)
@@ -12,6 +12,9 @@ if __name__ == '__main__':
     while(True):
         x = input('Guess a word: ')
         if x in result:
+            if x in s:
+                print('You have already guess the same')
+                continue
             for i in range(0,len(result)):
                 if result[i] == x:
                     string_list = list(s)
